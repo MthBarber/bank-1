@@ -1,8 +1,10 @@
 class Withdraw {
     constructor(value){
         this.withdrawAmount = value;
-        this.date = new Date;
+        this.date = new Date().toLocaleDateString();
         this.withdraw = true;
+        this.previousBalance = null;
+        this.currentBalance = null;
     }
 
     checkAmount(){
