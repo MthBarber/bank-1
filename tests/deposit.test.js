@@ -8,6 +8,6 @@ describe('Testing for the Class deposit', () => {
 
     it("Records the date of the creation of the Deposit", () => {
         const deposit = new Deposit(200);        
-        expect(deposit.checkDate()).toEqual(new Date)
-    })
+        expect(deposit.checkDate()).toEqual(new Date);
+    });
 })

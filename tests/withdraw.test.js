@@ -5,5 +5,10 @@ describe('Testing the Withdraw class', () => {
         const withdraw = new Withdraw(200);
         expect(withdraw.checkAmount()).toBe(200)
 
-    })
+    });
+
+    it("Records the date of the creation of the Withdraw", () => {
+        const withdraw = new Withdraw(200);        
+        expect(withdraw.checkDate()).toEqual(new Date);
+    });
 })
