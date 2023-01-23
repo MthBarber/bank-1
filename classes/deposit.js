@@ -1,7 +1,7 @@
 class Deposit {
     constructor(value){
         this.depositAmount = value;
-        this.deposit = true;
+        this.transactionType = "deposit";
         this.date = new Date().toLocaleDateString();
         this.previousBalance = null;
         this.currentBalance = null;
@@ -21,8 +21,8 @@ class Deposit {
 
     
 
-    isADeposit(){
-        return this.deposit
+    checkTransactionType(){
+        return this.transactionType;
     }
 
     setPreviousBalance(balance){

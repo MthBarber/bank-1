@@ -1,6 +1,6 @@
 class Bank{
     constructor(amount){
-        this.balance = amount || 0;
+        this.balance = amount || 0.00;
         this.statement = []
 
     }
@@ -10,21 +10,23 @@ class Bank{
     }
 
     newDeposit(deposit){
-        this.balance += deposit.checkAmount();
         this.statement.push(deposit);
+        this.balance += deposit.checkAmount();
+        
     }
 
     newWithdrawal(withdraw){
-        this.balance -= withdraw;
+        this.statement.push(withdraw)               
+        this.balance -= (withdraw.checkAmount());
     }
 
     printStatement(){
        let statement = `date || credit || debit || balance \n`
        this.statement.forEach(transaction => {            
-            if (transaction.isADeposit() === true){
+            if (transaction.checkTransactionType() === "deposit"){
                 statement += `${transaction.checkDate} || ${transaction.checkDepositAmount} || || ${this.balance} \n`
-            }else if (transaction.isAWithdraw === true){
-                statement += `${transaction.this.date} || ${transaction.this.depositAmount} || || ${this.balance} \n`
+            }else if (transaction.checkTransactionType() === "withdraw"){
+                statement += `${transaction.checkDate} || ${transaction.checkDepositAmount} || || ${this.balance} \n`
             }
         })
         return statement;
