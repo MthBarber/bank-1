@@ -3,13 +3,19 @@ class Bank{
         this.balance = amount || 0
     }
 
+    checkBalance(){
+        return this.balance;
+    }
+
     newDeposit(deposit){
         this.balance += deposit;
     }
 
-    checkBalance(){
-        return this.balance;
+    newWithdrawal(withdraw){
+        this.balance -= withdraw;
     }
+
+    
 }
 
 module.exports = Bank;

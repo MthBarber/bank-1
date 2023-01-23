@@ -20,5 +20,16 @@ describe('Testing for the Bank class', ()=> {
         }
         bank.newDeposit(deposit.checkAmount());
         expect(bank.checkBalance()).toBe(200);
-    })
+    });
+
+    it('Create an instance of bank that accepts a withdrawal', ()=> {
+        const bank = new Bank(200);
+        const withdraw = {
+            checkAmount(){
+                return 150;
+            }
+        }
+        bank.newWithdrawal(withdraw.checkAmount());
+        expect(bank.checkBalance()).toBe(50);
+    });
 })
