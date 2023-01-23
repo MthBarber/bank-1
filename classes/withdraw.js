@@ -4,7 +4,7 @@ class Withdraw {
         this.date = new Date().toLocaleDateString();
         this.transactionType = "withdraw";
         this.previousBalance = null;
-        this.currentBalance = null;
+        this.balance = null;
     }
 
     checkAmount(){
@@ -19,6 +19,13 @@ class Withdraw {
 
     checkTransactionType(){
         return this.transactionType;
+    }
+    setShowBalance(balance){
+        this.balance = balance;
+    }
+
+    showBalance(){
+        return this.balance;
     }
 }
 

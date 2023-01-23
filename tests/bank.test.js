@@ -23,6 +23,10 @@ describe('Testing for the Bank class', ()=> {
         const deposit = {
             checkAmount(){
                 return 200;
+            },
+
+            setShowBalance(){
+               
             }
         }
         bank.newDeposit(deposit);
@@ -34,6 +38,9 @@ describe('Testing for the Bank class', ()=> {
         const withdraw = {
             checkAmount(){
                 return 150;
+            },
+            setShowBalance(){
+
             }
         }
         bank.newWithdrawal(withdraw);
@@ -82,5 +89,24 @@ describe('Testing for the Bank class', ()=> {
         const withdraw = new Withdraw(200.00);
         bank.newWithdrawal(withdraw)
         expect(bank.printStatement()).toEqual(expect.stringContaining('300'));
+    });
+
+    it("Can return the correct balance with 2 transactions", ()=> {
+        const bank = new Bank(400);
+        const deposit = new Deposit(200);        
+        const withdraw = new Withdraw(150);
+        bank.newDeposit(deposit)
+        bank.newWithdrawal(withdraw);        
+        expect(bank.checkBalance()).toBe(450);
+    });
+
+    it("Can print out a statement with 2 transactions", ()=> {
+        const bank = new Bank(400);
+        const deposit = new Deposit(200);        
+        const withdraw = new Withdraw(150);
+        bank.newDeposit(deposit)
+        bank.newWithdrawal(withdraw);               
+        expect(bank.printStatement()).toEqual(expect.stringContaining('600'))
+        expect(bank.printStatement()).toEqual(expect.stringContaining('450'));
     });
 })
