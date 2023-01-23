@@ -3,7 +3,7 @@ class Withdraw {
         this.withdrawAmount = value
     }
 
-    amount(){
+    checkAmount(){
         return this.withdrawAmount
     }
 }
