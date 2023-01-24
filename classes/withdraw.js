@@ -3,7 +3,7 @@ class Withdraw {
         this.withdrawAmount = value;
         this.date = new Date().toLocaleDateString();
         this.transactionType = "withdraw";
-        this.previousBalance = null;
+        // this.previousBalance = null;
         this.balance = null;
     }
 
