@@ -40,3 +40,12 @@ $ npm install -g jest
 
 # Run our tests
 $ jest
+
+## My Approach
+
+Use individual classes for an action you may use on your Bank Account such as Withdraw or Deposit.
+The Bank Account will hold and maintain the actions you've taken which can then be passed to PrintStatement to deliver an overview of your acitivity.
+
+## Structure
+
+I've used classes as I feel these are more suitable because it provides a clear structure for what each asset should do, and it allows me to use several methods within to work with the data it holds and reduce complexity.
