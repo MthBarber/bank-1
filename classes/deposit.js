@@ -4,7 +4,7 @@ class Deposit {
         this.transactionType = "deposit";
         this.date = new Date().toLocaleDateString();
         this.balance = null;
-        // this.currentBalance = null;
+        
     }
 
     checkAmount(){
@@ -20,10 +20,7 @@ class Deposit {
         return this.transactionType;
     }
 
-    setCurrentBalance(){
-        this.previousBalance += this.checkAmount();
-    }
-
+    
     setShowBalance(balance){
         this.balance = balance;
     }
