@@ -2,7 +2,7 @@ class Deposit {
     constructor(value){
         this.depositAmount = value;
         this.transactionType = "deposit";
-        this.date = new Date().toLocaleDateString();
+        this.date = new Date()
         this.balance = null;
         
     }

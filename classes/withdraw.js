@@ -1,7 +1,7 @@
 class Withdraw {
     constructor(value){
         this.withdrawAmount = value;
-        this.date = new Date().toLocaleDateString();
+        this.date = new Date();
         this.transactionType = "withdraw";        
         this.balance = null;
     }

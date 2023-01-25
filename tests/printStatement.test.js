@@ -8,7 +8,7 @@ describe("Testing for printStatement class", ()=> {
 
         const account = [{
             checkDate(){
-                return new Date().toLocaleDateString();
+                return new Date();
             },
 
             checkAmount(){
@@ -21,7 +21,9 @@ describe("Testing for printStatement class", ()=> {
 
             checkTransactionType(){
                 return "deposit"
-            }
+            },
+
+            
         },]
 
 
@@ -55,7 +57,7 @@ describe("Testing for printStatement class", ()=> {
         bank.newDeposit(deposit)
         bank.newWithdrawal(withdraw);   
         const statement = new PrintStatement(bank.returnStatement())            
-        expect(statement.printStatement()).toEqual(expect.stringContaining('24/01/2023 || 200.00 || || 600.00'))
-        expect(statement.printStatement()).toEqual(expect.stringContaining('24/01/2023 || || 150.00 || 450.00'));
+        expect(statement.printStatement()).toEqual(expect.stringContaining(`${new Date().toLocaleDateString()} || 200.00 || || 600.00`))
+        expect(statement.printStatement()).toEqual(expect.stringContaining(`${new Date().toLocaleDateString()} || || 150.00 || 450.00`));
     });
 })
